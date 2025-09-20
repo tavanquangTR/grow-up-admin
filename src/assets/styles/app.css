@@ -1,0 +1,47 @@
+/* .layout {
+    height: 90%;
+
+} */
+:root,
+body {
+    margin: 0;
+}
+
+/* contains left menu and right content */
+.main-content {
+    display: flex;
+    gap: 30;
+}
+
+.left-menu {
+    width: 30vw;
+}
+
+.footer {
+    text-align: center;
+    color: blueviolet;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+/* home page content */
+.home-content {
+    width: calc(70vw - 30px);
+    margin: 20px auto;
+
+}
+
+/* table style */
+.form-table {
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+}
