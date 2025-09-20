@@ -1,47 +1,143 @@
-/* .layout {
-    height: 90%;
-
-} */
+/* 🌸 Gentle Admin Theme - Calm and Peaceful UI */
 :root,
 body {
     margin: 0;
+    background: linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #2d5a3d;
 }
 
-/* contains left menu and right content */
+/* Main layout with gentle spacing */
 .main-content {
     display: flex;
-    gap: 30;
+    gap: 0;
+    min-height: calc(100vh - 80px);
+    background: linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);
+}
+
+/* Left menu with soft styling */
+.left-menu-block {
+    width: 280px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(120, 194, 173, 0.2);
+    box-shadow: 2px 0 10px rgba(120, 194, 173, 0.1);
 }
 
 .left-menu {
-    width: 30vw;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+    border: none !important;
 }
 
+.left-menu .ant-menu-item {
+    margin: 8px 16px !important;
+    border-radius: 12px !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    color: #2d5a3d !important;
+    transition: all 0.3s ease !important;
+}
+
+.left-menu .ant-menu-item:hover {
+    background: rgba(120, 194, 173, 0.15) !important;
+    transform: translateX(4px);
+}
+
+.left-menu .ant-menu-item-selected {
+    background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%) !important;
+    color: #2d5a3d !important;
+    font-weight: 500 !important;
+    box-shadow: 0 4px 12px rgba(120, 194, 173, 0.3) !important;
+}
+
+/* Footer with gentle styling */
 .footer {
     text-align: center;
-    color: blueviolet;
+    color: #6b8a7a;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(120, 194, 173, 0.2);
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-
-/* home page content */
+/* Content area styling */
 .home-content {
-    width: calc(70vw - 30px);
-    margin: 20px auto;
-
+    width: calc(100vw - 320px);
+    margin: 0;
+    padding: 24px;
+    background: transparent;
 }
 
-/* table style */
+/* Form and table styling */
 .form-table {
     width: 100%;
-    padding: 20px 40px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(120, 194, 173, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .table-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Ant Design component overrides for gentle theme */
+.ant-btn-primary {
+    background: linear-gradient(135deg, #78c2ad 0%, #a8e6cf 100%) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(120, 194, 173, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.ant-btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(120, 194, 173, 0.4) !important;
+}
+
+.ant-table-wrapper {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(10px) !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 24px rgba(120, 194, 173, 0.1) !important;
+}
+
+.ant-table-thead>tr>th {
+    background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%) !important;
+    color: #2d5a3d !important;
+    font-weight: 500 !important;
+    border-bottom: 1px solid rgba(120, 194, 173, 0.3) !important;
+}
+
+.ant-table-tbody>tr:hover {
+    background: rgba(120, 194, 173, 0.08) !important;
+}
+
+.ant-modal-content {
+    border-radius: 20px !important;
+    backdrop-filter: blur(10px) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 20px 40px rgba(120, 194, 173, 0.2) !important;
+}
+
+.ant-input,
+.ant-input-password {
+    border-radius: 12px !important;
+    border: 1px solid rgba(120, 194, 173, 0.3) !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    transition: all 0.3s ease !important;
+}
+
+.ant-input:focus,
+.ant-input-password:focus {
+    border-color: #78c2ad !important;
+    box-shadow: 0 0 0 2px rgba(120, 194, 173, 0.2) !important;
 }

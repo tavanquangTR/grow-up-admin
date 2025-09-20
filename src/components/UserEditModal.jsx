@@ -17,13 +17,17 @@ const UserEditModal = ({ visible, user, isCreateMode, onClose }) => {
         if (visible) {
             if (isCreateMode) {
                 form.resetFields();
+                // 新規作成時は明示的にデフォルト値を設定
+                form.setFieldsValue({
+                    role: 'USER'
+                });
                 setProfileImageUrl('');
                 setBackgroundImageUrl('');
             } else if (user) {
                 form.setFieldsValue({
                     name: user.name,
                     email: user.email,
-                    role: user.role,
+                    role: user.role || 'USER', // roleがnullの場合のフォールバック
                     department: user.department,
                     position: user.position,
                     introduction: user.introduction,
@@ -40,12 +44,20 @@ const UserEditModal = ({ visible, user, isCreateMode, onClose }) => {
             const userData = {
                 name: values.name,
                 email: values.email,
+                role: values.role || 'USER', // roleフィールドを追加
+                department: values.department,
+                position: values.position,
+                introduction: values.introduction,
                 birthday: values.birthday,
                 gender: values.gender,
                 phoneNumber: values.phoneNumber,
                 address: values.address,
                 biography: values.biography
-            }; if (isCreateMode) {
+            };
+
+            console.log('Sending user data:', userData); // デバッグ用ログ
+
+            if (isCreateMode) {
                 await createUser(userData);
                 messageApi.success('ユーザーを作成しました');
             } else {
@@ -143,7 +155,7 @@ const UserEditModal = ({ visible, user, isCreateMode, onClose }) => {
                     label="ロール"
                     rules={[{ required: true, message: 'ロールを選択してください' }]}
                 >
-                    <Select>
+                    <Select defaultValue="USER" placeholder="ロールを選択してください">
                         <Option value="USER">USER</Option>
                         <Option value="ADMIN">ADMIN</Option>
                     </Select>

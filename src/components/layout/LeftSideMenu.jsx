@@ -21,31 +21,39 @@ const LeftSideMenu = (props) => {
   };
   const items = [
     {
-      label: `ホーム`,
+      label: `🏠 ホーム`,
       key: 'home',
-      icon: <Link to={"/"}><HomeOutlined /></Link>,
-
-
+      icon: <Link to={"/"}><HomeOutlined style={{ color: '#78c2ad' }} /></Link>,
     },
     {
-      label: 'ユーザー',
+      label: '👥 ユーザー',
       key: 'user',
-      icon: <Link to={"/users"}><UserOutlined /></Link>,
+      icon: <Link to={"/users"}><UserOutlined style={{ color: '#78c2ad' }} /></Link>,
     },
     {
-      label: '勉強会',
+      label: '📚 勉強会',
       key: 'workshop',
-      icon: <Link to={"/workshops"}><GroupOutlined /></Link>,
+      icon: <Link to={"/workshops"}><GroupOutlined style={{ color: '#78c2ad' }} /></Link>,
     },
     {
-      label: 'スキル',
+      label: '⚡ スキル',
       key: 'skill',
-      icon: <Link to={"/skills"}><ThunderboltOutlined /></Link>,
+      icon: <Link to={"/skills"}><ThunderboltOutlined style={{ color: '#78c2ad' }} /></Link>,
     },
     {
-      label: 'ダークモード',
+      label: '🌙 ダークモード',
       key: 'setting',
-      icon: <Button onClick={darkModeChange}><SettingOutlined /></Button>,
+      icon: <Button
+        onClick={darkModeChange}
+        type="text"
+        style={{
+          border: 'none',
+          background: 'transparent',
+          color: '#78c2ad'
+        }}
+      >
+        <SettingOutlined />
+      </Button>,
     },
   ];
 
